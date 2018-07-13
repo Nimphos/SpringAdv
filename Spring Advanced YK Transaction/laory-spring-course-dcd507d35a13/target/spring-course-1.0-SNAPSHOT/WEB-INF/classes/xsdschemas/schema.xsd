@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="auditorium" type="auditorium"/>
+
+  <xs:element name="event" type="event"/>
+
+  <xs:element name="user" type="user"/>
+
+  <xs:complexType name="event">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="rate" type="xs:string"/>
+      <xs:element name="basePrice" type="xs:double"/>
+      <xs:element name="dateTime" type="xs:dateTime"/>
+      <xs:element ref="auditorium"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="auditorium">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="seatsNumber" type="xs:int"/>
+      <xs:element name="vipSeats" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="birthday" type="xs:string"/>
+      <xs:element name="password" type="xs:string"/>
+      <xs:element name="role" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
